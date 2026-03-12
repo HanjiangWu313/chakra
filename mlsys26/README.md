@@ -4,7 +4,7 @@
 
 ### Create python virtual environment for Chakra
 ```bash
-# Create a virtual environment
+# Create a virtual environment in the path/to/chakra/ 
 $ python3 -m venv chakra_env
 
 # Activate the virtual environment
@@ -22,7 +22,6 @@ pip install .
 ### Pin protobuf version
 > **Critical:** The protobuf version used to **generate** the `.et` traces must match the
 > version compiled into the ASTRA-sim Docker image. The Dockerfile builds **protobuf 6.33.0**.
-> `build.sh` automatically regenerates `et_def.pb.h` from source at build time to match.
 > Pin your Chakra environment to the same version before converting traces.
 ```bash
 pip install protobuf==6.33.0
@@ -111,10 +110,6 @@ cd /app/astra-sim
 ```bash
 # Inside the container (after building):
 bash /app/astra-sim/mlsys26/plots/m8x7/mixtral_8x7b.sh
-
-# Cleanup the results directory generated 
-cd /app/astra-sim/mlsys26/plots/m8x7/
-find . -maxdepth 1 -type d ! -name . -exec rm -rf {} +
 ```
 
 ### Draw the plots (Fig. 6,7,8,12)
@@ -139,7 +134,7 @@ bash run_plot_memory.sh
 cd ./m8x7/
 python plot_astra-sim_bw_analysis.py
 
-# Cleanup the results directory generated 
+# Cleanup the results logs in the directory generated (Optional)
 cd /app/astra-sim/mlsys26/plots/m8x7/
 find . -maxdepth 1 -type d ! -name . -exec rm -rf {} +
 ```
