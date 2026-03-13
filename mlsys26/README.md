@@ -41,12 +41,10 @@ cd ../..
 ```bash
 cd mlsys26
 bash download_nemo_chakra_traces.sh
-cd ..
 ```
 
 ### Convert traces (trace link + converter in one step)
 ```bash
-cd mlsys26
 bash convert_traces.sh
 ```
 
@@ -69,10 +67,6 @@ git checkout changhai/chakra_main_paper
 git submodule update --init --recursive
 cd ..
 ```
-
-> **Note:** The validated commit is `0ba29a2`. Using a newer commit may produce
-> `file might be corrupted` errors due to ET feeder schema changes between versions.
-
 
 ```bash
 # Run from the mlsys26/ directory

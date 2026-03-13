@@ -63,9 +63,9 @@ echo ""
 echo "=== Step 2: chakra_converter ==="
 for ((rank=0; rank<NUM_RANKS; rank++)); do
     LINKED_IN="${LINKED_DIR}/rank${rank}_linked.json"
-    ET_OUT="${ET_DIR}/chakra_trace.${rank}"
+    ET_OUT="${ET_DIR}/chakra_trace.${rank}.et"
 
-    echo "[rank ${rank}] Converting ${LINKED_IN} -> ${ET_OUT}.et"
+    echo "[rank ${rank}] Converting ${LINKED_IN} -> ${ET_OUT}"
     chakra_converter PyTorch \
         --input "${LINKED_IN}" \
         --output "${ET_OUT}"
